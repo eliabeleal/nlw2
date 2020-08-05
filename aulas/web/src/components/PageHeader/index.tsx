@@ -8,6 +8,7 @@ import './styles.css'
 
 interface PageHeaderProps {
     title: string
+    description?: string
 }
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
@@ -21,8 +22,8 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
             </div>
             <div className="header-content">
                 <strong>{props.title}</strong>
-            </div>
-            <div className="header-content">
+                {/* && usando quando não temos o else do condicional, pois a segunda parte só será executada se a primeira for */}
+                {props.description && <p>{props.description}</p>}
                 {props.children}
             </div>
         </header>
