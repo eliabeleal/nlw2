@@ -1,11 +1,11 @@
 import React, { useState, FormEvent } from "react";
+import api from "../../services/api";
 
 import "./styles.css";
 import PageHeader from "../../components/PageHeader";
 import TeacherItem, { Teacher } from "../../components/TeacherItem";
 import Input from "../../components/Input";
 import Select from "../../components/Select";
-import api from "../../services/api";
 
 
 function TeacherList() {
@@ -23,6 +23,7 @@ function TeacherList() {
                 subject, week_day, time
             }
         });
+
         setTeachers(response.data);
     }
 
